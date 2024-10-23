@@ -53,3 +53,80 @@ document.addEventListener("scroll", function() {
   }
 });
 
+
+// document.getElementById("get-access-btn").addEventListener("click", function() {
+//   const emailInput = document.getElementById("main-4-input").value;
+//   const popup = document.getElementById("thank-you-popup");
+
+//   // Check if the input field is empty
+//   if (emailInput.trim() === "") {
+//       popup.innerHTML = "Please enter your email!";
+//       popup.style.backgroundColor = "rgba(255, 0, 0, 0.8)";  // Red background for error
+//   } else {
+//       popup.innerHTML = "Thank You!";
+//       popup.style.backgroundColor = "rgba(0, 0, 0, 0.7)";  // Regular background for success
+//   }
+
+//   // Show the popup
+//   popup.classList.add("show");
+
+//   // Hide the popup after 3 seconds
+//   setTimeout(() => {
+//       popup.classList.remove("show");
+//   }, 3000);
+// });
+
+
+
+
+
+document.getElementById("get-access-btn").addEventListener("click", function() {
+  const emailInput = document.getElementById("main-4-input").value;
+  const popup = document.getElementById("thank-you-popup");
+  const popupText = popup.querySelector(".popup-text");
+  const icon = popup.querySelector(".icon");
+  const closeIcon = popup.querySelector(".close-icon"); 
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+  popup.classList.remove("success-popup", "error-popup");
+
+  
+  if (emailInput.trim() === "") {
+      popupText.innerHTML = "Please enter your email!";
+      popup.classList.add("error-popup"); 
+      icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`; 
+      icon.style.backgroundColor = "transparent"; 
+     
+  } else if (!emailRegex.test(emailInput)) {
+      popupText.innerHTML = "Please enter a correct email!";
+      popup.classList.add("error-popup"); 
+      icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
+      icon.style.backgroundColor = "transparent"; 
+
+ 
+  } else {
+      popupText.innerHTML = "Thank You!";
+      popup.classList.add("success-popup"); 
+      icon.innerHTML = "&#10003;"; 
+      icon.style.backgroundColor = "rgba(0, 255, 0, 0.2)";  
+      icon.style.color = "green";
+  }
+
+
+  popup.classList.add("show");
+
+
+  setTimeout(() => {
+      popup.classList.remove("show");
+  }, 5000);
+
+  closeIcon.addEventListener("click", function() {
+    popup.classList.remove("show"); 
+  });
+});
+
+
+
+

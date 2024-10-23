@@ -269,7 +269,7 @@ p {
   background-image: url(/Images/IMG-2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  left: 55px;
+  left: 50px;
   border: 2px;
   border: #ffffff;
 }
@@ -282,17 +282,95 @@ p {
   border: #ffffff;
 }
 .ratingpic4 {
-  background-image: url(/Images/IMG-4.jpg);
+  background-image: url(/Images/img01.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+
   left: 155px;
 }
 .ratingpic5 {
-  background-image: url(/Images/IMG-5.jpg);
+  background-image: url(/Images/img0.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   left: 205px;
 }
+/* Popup common styles */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  color: black; 
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease, box-shadow 0.5s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-icon-img {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%; 
+  display: inline-block;
+}
+
+/* Icon styling */
+.icon {
+  border-radius: 50%;
+  padding: 5px 11px;
+  margin-right: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* Close icon styling */
+.close-icon {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Error Popup Styles */
+.error-popup {
+  background-color: #ffffff; 
+  color: #28292A; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Success Popup Styles */
+.success-popup {
+  background-color: #ffffff; 
+  color: #28292A; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  font-size: 14px;
+  padding: 8px 30px;
+}
+
+/* Popup text styles */
+.popup-text {
+  margin: 10px;
+  font-size: 16px;
+}
+
+
+
 
 .starBox {
   display: flex;
@@ -460,6 +538,8 @@ p {
     font-size: 1rem;
   }
 }
+
+
 
 .main-4 {
   height: 81vh;
