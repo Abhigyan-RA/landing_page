@@ -107,7 +107,7 @@ document.getElementById("get-access-btn").addEventListener("click", function() {
 
  
   } else {
-      popupText.innerHTML = "Thank You!";
+      popupText.innerHTML = "Thank You for registering";
       popup.classList.add("success-popup"); 
       icon.innerHTML = "&#10003;"; 
       icon.style.backgroundColor = "rgba(0, 255, 0, 0.2)";  

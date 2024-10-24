@@ -329,15 +329,24 @@ p {
 
 /* Icon styling */
 .icon {
-  border-radius: 50%;
-  padding: 5px 11px;
+  border-radius: 50%; /* Fully rounded */
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   
+  background-color: rgba(235, 87, 87, 0.1); /* Light red background */
+  box-shadow: 0 2px 4px rgba(144, 238, 144, 0.2);  /* Light red shadow */
 }
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #EB5757; /* Red color for the cross */
+}
+
 
 /* Close icon styling */
 .close-icon {
@@ -345,6 +354,14 @@ p {
   font-size: 20px;
   cursor: pointer;
   margin-left: 10px;
+}
+
+#main-4-input {
+  color: black; /* Set text color to black */
+}
+
+.popup .close-icon {
+  color: green; /* Set the color to green */
 }
 
 /* Error Popup Styles */
